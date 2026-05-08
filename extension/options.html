@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><title>LanguageBar – Settings</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{font-family:'Segoe UI',system-ui,sans-serif;background:#0e0e0e;color:#e0e0e0;min-height:100vh;display:flex;justify-content:center;padding:40px 20px}.c{max-width:560px;width:100%}h1{font-size:22px;font-weight:600;margin-bottom:6px;color:#fff}.sub{font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:32px}h2{font-size:14px;font-weight:600;color:rgba(255,255,255,0.6);margin:28px 0 14px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.06)}label{display:block;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;color:rgba(255,255,255,0.5);margin-bottom:6px}input[type="text"],input[type="search"]{width:100%;padding:10px 12px;font-size:14px;font-family:'Consolas',monospace;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:8px;color:#fff;outline:none}.f{margin-bottom:16px}.fh{font-size:11px;color:rgba(255,255,255,0.3);margin-top:4px}.lf{position:relative}.lf input{font-family:'Segoe UI',system-ui,sans-serif;padding-right:60px}.ld{position:absolute;top:100%;left:0;right:0;max-height:200px;overflow-y:auto;background:#1a1a1a;border:1px solid rgba(255,255,255,0.12);border-radius:8px;margin-top:4px;z-index:10;display:none}.ld.open{display:block}.lo{padding:8px 12px;font-size:13px;cursor:pointer;display:flex;justify-content:space-between}.lo:hover{background:rgba(255,255,255,0.08)}.lo .cd{color:rgba(255,255,255,0.3);font-size:11px}.lt{position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:11px;font-weight:600;color:rgba(100,180,255,0.6);text-transform:uppercase;pointer-events:none}.br{margin-top:24px;display:flex;gap:10px}button{padding:10px 20px;font-size:13px;font-weight:600;border:none;border-radius:8px;cursor:pointer;font-family:inherit}.bs{background:#fff;color:#000}.bc{background:rgba(255,255,255,0.07);color:rgba(255,255,255,0.5);border:1px solid rgba(255,255,255,0.1)}.st{margin-top:16px;font-size:13px}.st.ok{color:#6ddb8a}.st.er{color:#ff8a8a}.tip{margin-top:16px;padding:12px;background:rgba(100,180,255,0.06);border:1px solid rgba(100,180,255,0.12);border-radius:8px;font-size:12px;line-height:1.6;color:rgba(255,255,255,0.55)}.tip b{color:rgba(255,255,255,0.75)}.help{margin-top:28px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.06)}.help ol{padding-left:18px;font-size:13px;line-height:1.7;color:rgba(255,255,255,0.45)}.help a{color:rgba(100,180,255,0.7);text-decoration:none}kbd{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:4px;padding:2px 6px;font-size:12px}
+</style>
+</head>
+<body>
+<div class="c">
+<h1>LanguageBar</h1>
+<p class="sub">Select text to translate. Click words for details.</p>
+<h2>API Keys (grammar only)</h2>
+<div class="f"><label>Primary Gemini key</label><input type="text" id="k1" placeholder="Gemini API key" autocomplete="off" spellcheck="false"></div>
+<div class="f"><label>Backup key (optional)</label><input type="text" id="k2" placeholder="Key from different project" autocomplete="off" spellcheck="false"><div class="fh">Translation = Google Translate (free). Gemini = grammar only.</div></div>
+<h2>Languages</h2>
+<div class="f"><label>Primary translation language</label><div class="lf"><input type="search" id="l1" placeholder="Search…" autocomplete="off"><span class="lt" id="l1t"></span><div class="ld" id="l1d"></div></div></div>
+<div class="f"><label>Secondary translation language</label><div class="lf"><input type="search" id="l2" placeholder="Search…" autocomplete="off"><span class="lt" id="l2t"></span><div class="ld" id="l2d"></div></div></div>
+<div class="f"><label>Tertiary translation language</label><div class="lf"><input type="search" id="l3" placeholder="Search…" autocomplete="off"><span class="lt" id="l3t"></span><div class="ld" id="l3d"></div></div></div>
+<div class="f"><label>Word &amp; grammar language</label><div class="lf"><input type="search" id="le" placeholder="Search…" autocomplete="off"><span class="lt" id="let2"></span><div class="ld" id="led"></div></div><div class="fh">Language for word details and grammar notes</div></div>
+<h2>Keyboard Shortcut</h2>
+<div class="f"><div class="fh">Toggle on/off: <kbd>Ctrl+B</kbd>. Change at <b>edge://extensions/shortcuts</b> or <b>chrome://extensions/shortcuts</b></div></div>
+<div class="br"><button class="bs" id="sv">Save</button><button class="bc" id="cl">Clear all</button></div>
+<div class="st" id="st"></div>
+<div class="tip"><b>How it works:</b> Translation = Google Translate (free, unlimited). Grammar = Gemini (on click). Word details = Wiktionary (free).</div>
+<div class="help"><h2>Gemini API key (free)</h2><ol><li>Open <a href="https://aistudio.google.com/apikey" target="_blank">AI Studio → API keys</a></li><li><b>Create API key</b></li><li>Paste above and save</li></ol></div>
+</div>
+<script src="options.js"></script>
+</body></html>

@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "LanguageBar",
+  "description": "Select text to translate. Click words for details. Grammar via Gemini AI.",
+  "version": "2.0.0",
+  "permissions": ["storage", "activeTab"],
+  "host_permissions": [
+    "https://generativelanguage.googleapis.com/*",
+    "https://translate.googleapis.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "all_frames": false
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "commands": {
+    "toggle-languagebar": {
+      "suggested_key": { "default": "Ctrl+B" },
+      "description": "Toggle LanguageBar on/off"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
